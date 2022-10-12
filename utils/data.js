@@ -28,7 +28,7 @@ const data = {
       name: 'Shoe',
       slug: 'free-Shoe',
       category: 'products',
-      image: '/public/images/3.jpg',
+      image: '/public/images/6.jpg',
       price: 70,
       brand: 'Polo',
       rating: 4.5,
