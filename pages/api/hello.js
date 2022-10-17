@@ -1,5 +1,13 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import db from '../../lib/dbConnect'
+import User from '../../models/user'
+import data from '../../utils/data'
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+const handler = async (req, res) => {
+  await db.connect()
+  await User.deleteMany()
+  await User.insertMany(data.users)
+  await db.disconnect()
+  res.send({ message: 'data sent successfully' })
 }
+
+export default handler
